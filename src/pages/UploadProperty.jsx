@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-
+import { API } from '../utils/API';
 const UploadProperty = () => {
   const [formData, setFormData] = useState({
     title:'',
@@ -26,7 +26,7 @@ const UploadProperty = () => {
     console.log("formdata",formData);
     
     try {
-      const res = await fetch('http://localhost:5000/api/listing/create', {
+      const res = await fetch(`${API}/api/listing/create`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
